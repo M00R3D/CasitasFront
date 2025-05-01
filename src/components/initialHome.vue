@@ -5,11 +5,13 @@
       </span>
       <div class="container">
             <div class="brand">
-            <img
+            <a href="#">
+                <img
                 src="https://i.ibb.co/Tq7v2SD/path1584.png"
                 alt="Logo"
                 class="logo"
-            />
+                />
+            </a>
             <span class="logo-text">
                 Casitas El Salitral<br />
                 <small>Escápate a la naturaleza</small>
@@ -28,10 +30,47 @@
             </div>
 
             <button class="btn-agendar " @click="goToAgendarCita()">
-              Agendar Cita
+              Agendar Estancia
             </button>
         </div>
     </nav>
+
+    <body>
+        <br>        
+        <br>        
+        <br>        
+        <br>        
+        <br>        
+        <br>        
+        <br>        
+        
+    </body>
+
+    <footer>
+            
+        <nav class="navStyle">
+            <div class="container">
+                <span class="logo-text">
+                    <a href="#"> Contáctanos</a>
+                    <a href="#">
+                        <img alt="Logo"
+                    class="small-icon" src="https://i.ibb.co/2YRBG2kk/igicon.png"/>
+                    </a>
+                    <a href="#">
+                        <img alt="Logo"
+                    class="small-icon" src="https://i.ibb.co/FLbvPqPH/fbicon.png"/>
+                    </a>
+                    <a href="#">
+                        <img alt="Logo"
+                    class="small-icon" src="https://i.ibb.co/rRDFsCTK/wpicon.png"/>
+                    </a>
+                    <a href="#" class="contact-text">Email: contacto@cabanas.com</a>
+                    <a href="#" class="contact-text">Teléfono: (555) 555-5555 </a>
+                    
+                </span>
+            </div>
+        </nav>
+    </footer>
   </template>
   
   <script setup>
@@ -50,6 +89,9 @@
     margin: 0;
     padding: 0;
   }
+  a{
+    color:#5b3a29;
+  }
   .actual-page{
     color:#1d161362;
   }
@@ -57,7 +99,10 @@
     background-color: #ffe8e0;
     padding: 1rem;
   }
-  
+  .contact-text{
+    width: 40px;
+    align-self: end;
+  }
   .container {
     display: flex;
     align-items: center;
@@ -108,6 +153,11 @@
     color: #a0522d;
   }
   
+  .small-icon{
+    margin-top:5%;
+    margin-left:10px;
+    width:10px;
+  }
   @media (max-width: 768px) {
     .menu-button {
       display: block;
