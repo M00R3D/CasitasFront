@@ -1,5 +1,8 @@
 <template>
     <nav class="navStyle">
+      <span class="actual-page">
+                <small>|Pagina de Inicio|</small>
+      </span>
       <div class="container">
             <div class="brand">
             <img
@@ -47,7 +50,9 @@
     margin: 0;
     padding: 0;
   }
-  
+  .actual-page{
+    color:#1d161362;
+  }
   .navStyle {
     background-color: #ffe8e0;
     padding: 1rem;
