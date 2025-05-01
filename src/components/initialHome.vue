@@ -1,35 +1,138 @@
 <template>
-<nav class="navStyle"> 
-    <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo me-2" />
-            <span class="logo-text">Casitas El Salitral<br><small>Escápate a la naturaleza</small></span>
-          </a>
-    </div>
-</nav>
+    <nav class="navStyle">
+      <div class="container">
+            <div class="brand">
+            <img
+                src="https://i.ibb.co/Tq7v2SD/path1584.png"
+                alt="Logo"
+                class="logo"
+            />
+            <span class="logo-text">
+                Casitas El Salitral<br />
+                <small>Escápate a la naturaleza</small>
+            </span>
+            </div>
+    
+            <button class="menu-button" @click="toggleMenu">
+            ☰
+            </button>
+    
+            <div class="menu" :class="{ open: isOpen }">
+                <a href="#">Inicio</a>
+                <a href="#">Sobre Nosotros</a>
+                <a href="#">¿Cómo llegar?</a>
+                <a href="#">Temas</a>
+            </div>
 
-</template>
-<style scoped>
-        *,
-        *::after,
-        *::before{
-            box-sizing: border-box;}
-        .container{
-            background-color: rgb(161, 103, 103);
-            height:13vh;
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-        }
-        .logo {
-            width: 50px;
-        }
-        
-        .logo-text {
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-</style>
+            <button class="btn-agendar " @click="goToAgendarCita()">
+              Agendar Cita
+            </button>
+        </div>
+    </nav>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue'
+  
+  const isOpen = ref(false)
+  
+  function toggleMenu() {
+    isOpen.value = !isOpen.value
+  }
+  </script>
+  
+  <style scoped>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navStyle {
+    background-color: #ffe8e0;
+    padding: 1rem;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo {
+    width: 40px;
+    height: auto;
+  }
+  
+  .logo-text {
+    color: #5b3a29;
+    font-weight: bold;
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+  
+  .menu-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #5b3a29;
+    display: none;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .menu a {
+    color: #5b3a29;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  .menu a:hover {
+    color: #a0522d;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      margin-top: 1rem;
+    }
+  
+    .menu.open {
+      display: flex;
+    }
+  }
+  .btn-agendar {
+    padding: 10px 20px;              
+    background-color: #F28585;      
+    color: #fff;                    
+    font-size: 1rem;                 
+    font-weight: bold;               
+    border: 2px solid #f59e42;      
+    border-radius: 30px;             
+    text-transform: uppercase;
+    cursor: pointer;          
+    transition: background-color 0.3s, transform 0.2s;
+    }
+  </style>
+  
 <!-- <template>
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm py-3">
