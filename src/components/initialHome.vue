@@ -1,75 +1,47 @@
 <template>
     <nav class="navStyle">
-      <span class="actual-page">
-                <small>|Pagina de Inicio|</small>
-      </span>
+      <span class="actual-page"><small>| Página de Inicio |</small></span>
       <div class="container">
-            <div class="brand">
-            <a href="#">
-                <img
-                src="https://i.ibb.co/Tq7v2SD/path1584.png"
-                alt="Logo"
-                class="logo"
-                />
-            </a>
-            <span class="logo-text">
-                Casitas El Salitral<br />
-                <small>Escápate a la naturaleza</small>
-            </span>
-            </div>
-    
-            <button class="menu-button" @click="toggleMenu">
-            ☰
-            </button>
-    
-            <div class="menu" :class="{ open: isOpen }">
-                <a href="#">Inicio</a>
-                <a href="#">Sobre Nosotros</a>
-                <a href="#">¿Cómo llegar?</a>
-                <a href="#">Temas</a>
-            </div>
-
-            <button class="btn-agendar " @click="goToAgendarCita()">
-              Agendar Estancia
-            </button>
+        <div class="brand">
+          <a href="#">
+            <img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo" />
+          </a>
+          <span class="logo-text">
+            Casitas El Salitral<br />
+            <small>Escápate a la naturaleza</small>
+          </span>
         </div>
+  
+        <button class="menu-button" @click="toggleMenu">☰</button>
+  
+        <div class="menu" :class="{ open: isOpen }">
+          <a href="#">Inicio</a>
+          <a href="#">Sobre Nosotros</a>
+          <a href="#">¿Cómo llegar?</a>
+          <a href="#">Temas</a>
+        </div>
+  
+        <button class="btn-agendar" @click="goToAgendarCita()">Agendar Estancia</button>
+      </div>
     </nav>
-
-    <body>
-        <br>        
-        <br>        
-        <br>        
-        <br>        
-        <br>        
-        <br>        
-        <br>        
-        
-    </body>
-
-    <footer>
-            
-        <nav class="navStyle">
-            <div class="container">
-                <span class="logo-text">
-                    <a href="#"> Contáctanos</a>
-                    <a href="#">
-                        <img alt="Logo"
-                    class="small-icon" src="https://i.ibb.co/2YRBG2kk/igicon.png"/>
-                    </a>
-                    <a href="#">
-                        <img alt="Logo"
-                    class="small-icon" src="https://i.ibb.co/FLbvPqPH/fbicon.png"/>
-                    </a>
-                    <a href="#">
-                        <img alt="Logo"
-                    class="small-icon" src="https://i.ibb.co/rRDFsCTK/wpicon.png"/>
-                    </a>
-                    <a href="#" class="contact-text">Email: contacto@cabanas.com</a>
-                    <a href="#" class="contact-text">Teléfono: (555) 555-5555 </a>
-                    
-                </span>
-            </div>
-        </nav>
+  
+    <div class="spacer"></div>
+  
+    <footer class="navStyle">
+      <div class="container footer-container">
+        <div class="footer-links">
+          <a href="#">Contáctanos</a>
+          <a href="#"><img src="https://i.ibb.co/2YRBG2kk/igicon.png" class="small-icon" /></a>
+          <a href="#"><img src="https://i.ibb.co/FLbvPqPH/fbicon.png" class="small-icon" /></a>
+          <a href="#"><img src="https://i.ibb.co/rRDFsCTK/wpicon.png" class="small-icon" /></a>
+          <a href="#" class="contact-text">Email: contacto@cabanas.com</a>
+          <a href="#" class="contact-text">Teléfono: (555) 555-5555</a>
+        </div>
+        <div class="footer-logo">
+          <a href="#"><img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo" /></a>
+          <a href="#">© 2024 Casitas El Salitral. Todos los derechos reservados.</a>
+        </div>
+      </div>
     </footer>
   </template>
   
@@ -81,6 +53,10 @@
   function toggleMenu() {
     isOpen.value = !isOpen.value
   }
+  
+  function goToAgendarCita() {
+    // lógica para redirigir al modal o página correspondiente
+  }
   </script>
   
   <style scoped>
@@ -89,20 +65,21 @@
     margin: 0;
     padding: 0;
   }
-  a{
-    color:#5b3a29;
+  
+  a {
+    color: #5b3a29;
+    text-decoration: none;
   }
-  .actual-page{
-    color:#1d161362;
+  
+  .actual-page {
+    color: #1d161362;
   }
+  
   .navStyle {
     background-color: #ffe8e0;
     padding: 1rem;
   }
-  .contact-text{
-    width: 40px;
-    align-self: end;
-  }
+  
   .container {
     display: flex;
     align-items: center;
@@ -143,8 +120,6 @@
   }
   
   .menu a {
-    color: #5b3a29;
-    text-decoration: none;
     font-weight: 500;
     transition: color 0.2s;
   }
@@ -153,11 +128,52 @@
     color: #a0522d;
   }
   
-  .small-icon{
-    margin-top:5%;
-    margin-left:10px;
-    width:10px;
+  .btn-agendar {
+    padding: 10px 20px;
+    background-color: #f28585;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #f59e42;
+    border-radius: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
   }
+  
+  .small-icon {
+    margin-left: 10px;
+    width: 16px;
+    vertical-align: middle;
+  }
+  
+  .contact-text {
+    margin-left: 10px;
+    font-size: 0.85rem;
+    display: inline-block;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .footer-links,
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .spacer {
+    height: 6rem;
+  }
+  
   @media (max-width: 768px) {
     .menu-button {
       display: block;
@@ -173,19 +189,11 @@
     .menu.open {
       display: flex;
     }
-  }
-  .btn-agendar {
-    padding: 10px 20px;              
-    background-color: #F28585;      
-    color: #fff;                    
-    font-size: 1rem;                 
-    font-weight: bold;               
-    border: 2px solid #f59e42;      
-    border-radius: 30px;             
-    text-transform: uppercase;
-    cursor: pointer;          
-    transition: background-color 0.3s, transform 0.2s;
+  
+    .btn-agendar {
+      margin-top: 1rem;
     }
+  }
   </style>
   
 <!-- <template>
