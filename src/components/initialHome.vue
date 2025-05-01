@@ -10,7 +10,25 @@
 
 </template>
 <style scoped>
-
+        *,
+        *::after,
+        *::before{
+            box-sizing: border-box;}
+        .container{
+            background-color: rgb(161, 103, 103);
+            height:13vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .logo {
+            width: 50px;
+        }
+        
+        .logo-text {
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
 </style>
 <!-- <template>
     <div>
