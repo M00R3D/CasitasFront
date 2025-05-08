@@ -1,3 +1,14 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 .navStyle {
   background-color: #ffffff;
   border-bottom: 1px solid #ccc;
@@ -12,15 +23,25 @@
   margin-bottom: 5px;
 }
 
-.container {
+/* .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  /* padding: 0 20px; */
+  /* width: 100%; */
+  /* max-width: 100%; */
+  /* box-sizing: border-box; */
+/* } */
+ /* */
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .brand {
@@ -78,31 +99,37 @@
 }
 
 .spacer {
-  height: 30px;
+  /* height: 30px; */
 }
 
 .galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
+
 .imagen-grande {
   flex: 1 1 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .img-destacada {
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  flex: 1 1 100%;
   border-radius: 10px;
 }
 
 .imagen-chica {
   flex: 1 1 calc(50% - 10px);
+  max-width: 100%;
+  height: auto;
 }
 
 .img {
@@ -115,6 +142,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  flex-shrink: 1;
   align-items: center;
   padding: 10px 20px;
   width: 100%;
@@ -158,7 +186,6 @@
 .contact-text {
   margin-left: 10px;
 }
-
 @media (max-width: 768px) {
   .menu {
     display: none;
@@ -196,3 +223,5 @@
     flex: 1 1 100%;
   }
 }
+
+

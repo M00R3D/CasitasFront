@@ -5,9 +5,9 @@ import InitialHome from './components/initialHome.vue'
 </script>
 
 <template>
-        <InitialHome />
-        <!-- <RouterView /> -->
+  <router-view />
 </template>
+
 
 <style scoped>
 header {
