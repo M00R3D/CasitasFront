@@ -1,75 +1,33 @@
+<!-- src/components/InitialHome.vue -->
 <style scoped src="src/components/styles.css"></style>
-<!-- src/components/initialHome.vue -->
 <template>
-  <nav class="navStyle">
-    <span class="actual-page"><small>| Página de Inicio |</small></span>
-    <div class="container">
-      <div class="brand">
-        <a href="#"><img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo" /></a>
-        <span class="logo-text">
-          Casitas El Salitral<br />
-          <small>Escápate a la naturaleza</small>
-        </span>
-      </div>
-      <button class="menu-button" @click="toggleMenu">☰</button>
-      <div class="menu" :class="{ open: isOpen }">
-        <a href="#">Inicio</a>
-        <a href="#">Sobre Nosotros</a>
-        <a href="#">¿Cómo llegar?</a>
-        <a href="#">Temas</a>
-      </div>
-      <button class="btn-agendar" @click="goToAgendarCita()">Agendar Estancia</button>
-    </div>
-  </nav>
+  <Navbar />
 
-    <div class="spacer"></div>
-<!-- 
-    <section class="galeria">
-      <div class="galeria-grid">
-       
-        
-        
-      </div>
-    </section> -->
-    <body>
-      <section class="galeria">
-        <div class="imagen-grande"> <img src="https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg" alt="Casita 1" class="img img-destacada" /></div>
-        <div class="imagen-chica"><img src="https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg" alt="Casita 2" class="img" /></div>
-        <div class="imagen-chica"><img src="https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg" alt="Casita 2" class="img" /></div>
-        <div class="imagen-chica"><img src="https://i.ibb.co/gbSzPjQm/Whats-App-Image-2024-10-24-at-8-53-25-PM.jpg" alt="Casita 5" class="img" /></div>
-      </section>
-    </body>
-    <div class="spacer"></div>
+  <div class="spacer"></div>
 
-  <footer class="navStyle">
-    <div class="container footer-container">
-      <div class="footer-links">
-        <a href="#">Contáctanos</a>
-        <a href="#"><img src="https://i.ibb.co/2YRBG2kk/igicon.png" class="small-icon" /></a>
-        <a href="#"><img src="https://i.ibb.co/FLbvPqPH/fbicon.png" class="small-icon" /></a>
-        <a href="#"><img src="https://i.ibb.co/rRDFsCTK/wpicon.png" class="small-icon" /></a>
-        <a href="#" class="contact-text">Email: contacto@cabanas.com</a>
-        <a href="#" class="contact-text">Teléfono: (555) 555-5555</a>
-      </div>
-      <div class="footer-logo">
-        <a href="#"><img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo" /></a>
-        <a href="#">© 2024 Casitas El Salitral. Todos los derechos reservados.</a>
-      </div>
+  <section class="galeria">
+    <div class="imagen-grande">
+      <img src="https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg" alt="Casita 1" class="img img-destacada" />
     </div>
-  </footer>
+    <div class="imagen-chica">
+      <img src="https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg" alt="Casita 2" class="img" />
+    </div>
+    <div class="imagen-chica">
+      <img src="https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg" alt="Casita 2" class="img" />
+    </div>
+    <div class="imagen-chica">
+      <img src="https://i.ibb.co/gbSzPjQm/Whats-App-Image-2024-10-24-at-8-53-25-PM.jpg" alt="Casita 5" class="img" />
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+
+  <Footer />
 </template>
 
 <script setup>
-import { ref } from 'vue'
-
-const isOpen = ref(false)
-
-function toggleMenu() {
-  isOpen.value = !isOpen.value
-}
-
-function goToAgendarCita() {
-}
+import Navbar from './Navbar.vue'
+import Footer from './Footer.vue'
 </script>
 
 
