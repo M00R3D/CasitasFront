@@ -1,0 +1,198 @@
+.navStyle {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  /* padding: 10px 0; */
+  width: 100%;
+}
+
+.actual-page {
+  display: block;
+  text-align: center;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.menu.open {
+  display: flex;
+}
+
+.btn-agendar {
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.spacer {
+  height: 30px;
+}
+
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.imagen-grande {
+  flex: 1 1 100%;
+}
+
+.img-destacada {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.imagen-chica {
+  flex: 1 1 calc(50% - 10px);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1 1 auto;
+  text-align: right;
+}
+
+.footer-logo a {
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.small-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.contact-text {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .btn-agendar {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-logo {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .imagen-chica {
+    flex: 1 1 100%;
+  }
+}
