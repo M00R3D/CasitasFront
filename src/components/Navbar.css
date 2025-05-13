@@ -1,0 +1,94 @@
+/* CasitasFront\src\components\Navbar.css */
+/* Estilos generales de la barra de navegación */
+.navStyle {
+  background-color: #ffffff;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logo-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.2;
+}
+
+.menu-button {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.menu.open {
+  display: flex;
+}
+
+.btn-agendar {
+  background-color: #f4a261;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #fff;
+    margin-top: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .btn-agendar {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
