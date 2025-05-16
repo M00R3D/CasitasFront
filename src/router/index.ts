@@ -6,7 +6,7 @@ import InitialHome from '../components/InitialHome.vue'
 const routes = [
   { path: '/', component: SplashScreen },
   { path: '/home', component: InitialHome }
-]
+] 
 
 const router = createRouter({
   history: createWebHistory(),

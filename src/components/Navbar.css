@@ -1,25 +1,23 @@
 /* CasitasFront\src\components\Navbar.css */
+  @import 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css';
 /* Estilos generales de la barra de navegación */
+
 .navStyle {
   background-color: #ffffff;
   border-bottom: 1px solid #ccc;
   width: 100%;
 }
 
-.container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 20px;
+img {
+  max-width: 100%;
+  height: auto;
 }
+
 
 .brand {
   display: flex;
   align-items: center;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
 }
 
 .logo {
