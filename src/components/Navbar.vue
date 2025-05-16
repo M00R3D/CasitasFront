@@ -1,4 +1,3 @@
-<!-- src/components/Navbar.vue -->
 <template>
   <nav class="navbar-wrapper border-bottom">
     <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap py-2">
@@ -48,20 +47,31 @@ function goToAgendarCita() {
 </script>
 
 <style scoped>
+/* Fondo blanco y ancho completo */
 .navbar-wrapper {
   background-color: #ffffff;
   width: 100%;
 }
+
+/* Eliminar padding lateral del container-fluid */
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Imagen responsiva */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Logo */
 .logo {
   width: 60px;
   height: auto;
 }
 
+/* Texto del logo */
 .logo-text {
   font-size: 1.2em;
   font-weight: bold;
@@ -69,6 +79,7 @@ img {
   line-height: 1.2;
 }
 
+/* Enlaces del menú */
 .menu a {
   margin-right: 20px;
   text-decoration: none;
@@ -76,6 +87,7 @@ img {
   font-weight: 500;
 }
 
+/* Botón menú hamburguesa */
 .menu-button {
   background: none;
   border: none;
@@ -83,6 +95,7 @@ img {
   cursor: pointer;
 }
 
+/* Botón agendar */
 .btn-agendar {
   background-color: #f4a261;
   color: white;
@@ -93,6 +106,7 @@ img {
   cursor: pointer;
 }
 
+/* Estilos responsivos */
 @media (max-width: 768px) {
   .menu {
     width: 100%;

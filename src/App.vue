@@ -6,17 +6,20 @@ import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
-    <nav><Navbar /></nav>
+<div >
+    <Navbar  class="nv" />
     <router-view />
-    <footer><Footer /></footer>
+    <Footer />
+</div>
 </template>
 
 <style scoped>
 /* Scoped solo afecta este componente */
-.w-100 {
-    width: 100%;
-  margin: 0;
-  padding: 0;
+.nv {
+    min-width: 100%;
+    flex-wrap: nowrap;
+  /* margin: 0;
+  padding: 0; */
 }
 </style>
 <style >
@@ -28,6 +31,6 @@ import Navbar from './components/Navbar.vue';
   padding: 0;
   box-sizing: border-box;
 }
-nav{width: 100%;}
+
 
 </style>
