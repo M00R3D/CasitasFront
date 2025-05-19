@@ -1,5 +1,5 @@
 <template>
-    <h2 class="text-center fw-bold mb-5">Cabañas Disponibles</h2>
+  <h2 class="text-center fw-bold mb-5">Cabañas Disponibles</h2>
   <section class="container my-5">
     <div class="row">
       <!-- Sección de comentarios (izquierda) -->
@@ -17,14 +17,11 @@
           </div>
         </div>
       </div>
-
-      <!-- Sección de cabañas -->
       <div class="col-lg-8">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col" v-for="(cabana, index) in cabanas" :key="index">
             <a
-              :href="'https://www.google.com'"
-              target="_blank"
+              :href="'/detail'"
               rel="noopener noreferrer"
               class="card h-100 shadow-sm border-0 cabana-card text-decoration-none"
             >
@@ -49,45 +46,104 @@
 <script setup>
 const cabanas = [
   {
-    nombre: 'Cabaña 1',
-    descripcion: 'Una cabaña con vistas espectaculares.',
-    img: 'https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg',
+    nombre: "Cabaña 1",
+    descripcion: "Una cabaña con vistas espectaculares.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
   },
   {
-    nombre: 'Cabaña 2',
-    descripcion: 'Relájate con el sonido del mar cercano.',
-    img: 'https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg',
+    nombre: "Cabaña 2",
+    descripcion: "Relájate con el sonido del mar cercano.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
   },
   {
-    nombre: 'Cabaña 3',
-    descripcion: 'Perfecta para una escapada romántica.',
-    img: 'https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg',
+    nombre: "Cabaña 3",
+    descripcion: "Perfecta para una escapada romántica.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
   },
-  // Puedes agregar más cabañas para completar 12 elementos
-]
+  {
+    nombre: "Cabaña 4",
+    descripcion: "Ideal para familias grandes.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 5",
+    descripcion: "Ambiente rústico y acogedor.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 6",
+    descripcion: "Vista panorámica de la montaña.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 7",
+    descripcion: "Tranquilidad y privacidad garantizadas.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 8",
+    descripcion: "A pocos pasos del lago.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 9",
+    descripcion: "Diseño moderno y elegante.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 10",
+    descripcion: "Perfecta para escapadas de fin de semana.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 11",
+    descripcion: "Ambiente cálido con chimenea.",
+    img: "https://i.ibb.co/9kYy8JcB/Whats-App-Image-2024-10-24-at-8-53-21-PM.jpg",
+  },
+  {
+    nombre: "Cabaña 12",
+    descripcion: "Ideal para amantes de la naturaleza.",
+    img: "https://i.ibb.co/F4nP9p09/Whats-App-Image-2024-10-24-at-8-53-23-PM.jpg",
+  },
+];
+
 const comentarios = [
   {
-    nombre: 'Laura Gómez',
-    cabana: 'Cabaña 1',
+    nombre: "Laura Gómez",
+    cabana: "Cabaña 1",
     estrellas: 5,
-    mensaje: 'Hermosa experiencia, muy recomendada.',
-    foto: 'https://randomuser.me/api/portraits/women/44.jpg',
+    mensaje: "Hermosa experiencia, muy recomendada.",
+    foto: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
-    nombre: 'Carlos Díaz',
-    cabana: 'Cabaña 2',
+    nombre: "Carlos Díaz",
+    cabana: "Cabaña 2",
     estrellas: 4,
-    mensaje: 'Todo muy bien, solo faltó café.',
-    foto: 'https://randomuser.me/api/portraits/men/32.jpg',
+    mensaje: "Todo muy bien, solo faltó café.",
+    foto: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
-    nombre: 'Ana Torres',
-    cabana: 'Cabaña 3',
+    nombre: "Ana Torres",
+    cabana: "Cabaña 3",
     estrellas: 3,
-    mensaje: 'Cómoda pero un poco calurosa.',
-    foto: 'https://randomuser.me/api/portraits/women/68.jpg',
+    mensaje: "Cómoda pero un poco calurosa.",
+    foto: "https://randomuser.me/api/portraits/women/68.jpg",
   },
-]
+  {
+    nombre: "Pedro Martínez",
+    cabana: "Cabaña 1",
+    estrellas: 4,
+    mensaje: "Muy buen lugar, repetiría.",
+    foto: "https://randomuser.me/api/portraits/men/75.jpg",
+  },
+  {
+    nombre: "Sofía Ruiz",
+    cabana: "Cabaña 5",
+    estrellas: 5,
+    mensaje: "Perfecto para desconectarse.",
+    foto: "https://randomuser.me/api/portraits/women/22.jpg",
+  },
+];
 </script>
 
 <style scoped>

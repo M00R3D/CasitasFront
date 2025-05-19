@@ -1,0 +1,175 @@
+/* CasitasFront\src\components\InitialHome.css */
+/* Estilos para la página principal / galería */
+.spacer {
+  /* Placeholder si se usa para espacio vertical */
+}
+
+.actual-page {
+  display: block;
+  text-align: center;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "grande" 
+    "chica1"
+    "chica2"
+    "chica3";
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  padding: 20px;
+  align-items: stretch;
+}
+
+.imagen-grande {
+  grid-area: grande;
+  height: 100%;
+}
+
+.imagen-chica:nth-child(2) {
+  grid-area: chica1;
+}
+.imagen-chica:nth-child(3) {
+  grid-area: chica2;
+}
+.imagen-chica:nth-child(4) {
+  grid-area: chica3;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.galeria-artistica {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.galeria-artistica img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  clip-path: polygon(
+    0 0, calc(60% - 5px) 0, calc(60% - 5px) calc(70% - 5px), 
+    0 calc(70% - 5px), 0 calc(70% + 5px), calc(60% - 5px) calc(70% + 5px), 
+    calc(60% - 5px) 100%, 0 100%, 0 0, calc(60% + 5px) 0, 
+    calc(60% + 5px) calc(33.33% - 5px), 100% calc(33.33% - 5px), 
+    100% calc(33.33% + 5px), calc(60% + 5px) calc(33.33% + 5px), 
+    calc(60% + 5px) calc(66.66% - 5px), 100% calc(66.66% - 5px), 
+    100% calc(66.66% + 5px), calc(60% + 5px) calc(66.66% + 5px), 
+    calc(60% + 5px) 100%, 100% 100%, 100% 0
+  );
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.galeria-artistica img:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.banner {
+  height: 70vh;
+  overflow: hidden;
+}
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+.btn-agendar {
+  background-color: #007bff;
+  color: white;
+  border-radius: 30px;
+  padding: 0.5rem 2rem;
+  border: none;
+}
+.btn-agendar:hover {
+  background-color: #0056b3;
+}
+.galeria .grid-container {
+  display: grid;
+  grid-template-areas:
+    "grande grande"
+    "chica1 chica2"
+    "chica3 chica4";
+  gap: 1rem;
+}
+.imagen-grande {
+  grid-area: grande;
+}
+.imagen-chica {
+  grid-area: auto;
+}
+.img-hover-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.img-hover-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.img-hover-container:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.5);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.img-hover-container:hover .overlay-text {
+  opacity: 1;
+}
+/* Responsivo para pantallas chicas */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "grande" "chica2"
+      "chica1" "chica3";
+    grid-template-columns: 1fr;
+  }
+}

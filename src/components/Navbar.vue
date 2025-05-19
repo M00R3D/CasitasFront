@@ -4,7 +4,7 @@
       
       <!-- Marca / Logo -->
       <div class="d-flex align-items-center gap-2">
-        <a href="#">
+        <a href="/home">
           <img src="https://i.ibb.co/Tq7v2SD/path1584.png" alt="Logo" class="logo" />
         </a>
         <div class="logo-text">

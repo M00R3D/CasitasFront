@@ -2,10 +2,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import SplashScreen from '../components/SplashScreen.vue'
 import InitialHome from '../components/InitialHome.vue'
+import CabanaDetail from '../components/CabanaDetail.vue'
 
 const routes = [
   { path: '/', component: SplashScreen },
-  { path: '/home', component: InitialHome }
+  { path: '/home', component: InitialHome },
+  { path: '/detail', component: CabanaDetail }
 ] 
 
 const router = createRouter({
