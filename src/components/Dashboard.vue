@@ -1,4 +1,3 @@
-<!-- src/components/Dashboard.vue -->
 <template>
   <section class="dashboard">
     <h2>Tus Reservaciones</h2>
@@ -16,13 +15,17 @@
       </thead>
       <tbody>
         <tr v-for="(reserva, index) in reservaciones" :key="index">
-          <td>{{ calcularEstado(reserva.llegada, reserva.salida, reserva.cancelada) }}</td>
+          <td :class="estadoClase(reserva)">
+            {{ calcularEstado(reserva.llegada, reserva.salida, reserva.cancelada) }}
+          </td>
           <td>{{ reserva.casita }}</td>
           <td>${{ reserva.costo.toLocaleString('es-MX') }}</td>
           <td>{{ formatFecha(reserva.llegada) }}</td>
           <td>{{ formatFecha(reserva.salida) }}</td>
           <td>
-            <button @click="verDetalle(reserva)">Ver Detalle</button>
+            <button @click="verDetalle(reserva)" class="btn-ver">
+              <img src="https://cdn-icons-png.flaticon.com/512/709/709612.png" alt="Ver Detalles" class="icono-ojo" />
+            </button>
           </td>
         </tr>
       </tbody>
@@ -33,7 +36,6 @@
 <script setup>
 import { ref } from 'vue'
 
-// Datos simulados (puedes cargarlos desde props o API)
 const reservaciones = ref([
   {
     casita: 'Casita del Mar',
@@ -58,7 +60,6 @@ const reservaciones = ref([
   },
 ])
 
-// Función para calcular el estado de la reservación
 function calcularEstado(llegada, salida, cancelada) {
   if (cancelada) return 'Cancelada'
 
@@ -75,7 +76,6 @@ function calcularEstado(llegada, salida, cancelada) {
   return 'Finalizada'
 }
 
-// Función para mostrar fechas en formato legible
 function formatFecha(fecha) {
   return new Date(fecha).toLocaleDateString('es-MX', {
     year: 'numeric',
@@ -84,16 +84,28 @@ function formatFecha(fecha) {
   })
 }
 
-// Acción del botón
 function verDetalle(reserva) {
   alert(`Detalle de la reservación:\nCasita: ${reserva.casita}\nLlegada: ${reserva.llegada}\nSalida: ${reserva.salida}`)
+}
+
+function estadoClase(reserva) {
+  if (reserva.cancelada) return 'estado-cancelado'
+
+  const hoy = new Date()
+  const fLlegada = new Date(reserva.llegada)
+  const fSalida = new Date(reserva.salida)
+
+  if (hoy >= fLlegada && hoy <= fSalida) return 'estado-en-curso'
+  if (hoy < fLlegada) return 'estado-proxima'
+
+  return 'estado-finalizada'
 }
 </script>
 
 <style scoped>
 .dashboard {
   padding: 2rem;
-  background: #f8f9fa;
+  background: #f9f9f9;
 }
 
 .reservations-table {
@@ -101,32 +113,64 @@ function verDetalle(reserva) {
   border-collapse: collapse;
   margin-top: 1rem;
   background: white;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 0.95rem;
 }
 
 .reservations-table th,
 .reservations-table td {
-  padding: 12px 16px;
-  border: 1px solid #ddd;
+  padding: 14px 12px;
   text-align: center;
+  border-bottom: 1px solid #eee;
 }
 
 .reservations-table th {
-  background-color: #f0f0f0;
+  background-color: #fafafa;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Eliminar la última línea del borde */
+.reservations-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Botón con ícono */
+.btn-ver {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.icono-ojo
+{
+width:33px;
+height: auto;
+}
+.btn-ver:hover {
+  transform: scale(1.2);
+}
+
+/* Colores de estado */
+.estado-en-curso {
+  color: #007bff;
   font-weight: bold;
 }
 
-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
+.estado-proxima {
+  color: #28a745;
+  font-weight: bold;
 }
 
-button:hover {
-  background-color: #0056b3;
+.estado-finalizada {
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.estado-cancelado {
+  color: #dc3545;
+  font-weight: bold;
 }
 </style>
