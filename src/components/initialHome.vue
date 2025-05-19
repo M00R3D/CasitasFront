@@ -25,10 +25,15 @@
   </div>
 </div>
 
-  <div class="spacer"></div>
+<div class="spacer"></div>
+
+<div class="container-fluid ">
+    <Cabanas />
+</div>
 
 </template>
 
 <script setup>
 import Dashboard from './Dashboard.vue';
+import Cabanas from './Cabanas.vue'
 </script>
