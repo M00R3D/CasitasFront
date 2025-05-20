@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar-wrapper border-bottom">
+  <nav :class="['navbar-wrapper', 'border-bottom', isVisible ? 'show-navbar' : 'hide-navbar']">
     <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap py-2">
       
       <!-- Marca / Logo -->
@@ -33,24 +33,62 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 const isOpen = ref(false)
+const isVisible = ref(true)
+let lastScrollTop = 0
 
 function toggleMenu() {
   isOpen.value = !isOpen.value
 }
 
 function goToAgendarCita() {
-  // Aquí puedes emitir evento o usar router.push si usas Vue Router
+  // router.push o emitir evento
 }
-</script>
 
+function handleScroll() {
+  const currentScroll = window.scrollY
+
+  if (currentScroll < lastScrollTop) {
+    // scrolleando hacia arriba
+    isVisible.value = true
+  } else {
+    // scrolleando hacia abajo
+    isVisible.value = false
+  }
+
+  lastScrollTop = currentScroll
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+<style src="src/components/Navbar.css"></style>
 <style scoped>
 /* Fondo blanco y ancho completo */
 .navbar-wrapper {
-  background-color: #ffffff;
+  position: sticky;
+  top: 0;
   width: 100%;
+  z-index: 1030; /* mayor que otros elementos */
+  transition: transform 0.3s ease;
+  background-color: #ffffff;
+}
+
+/* Visible (default) */
+.show-navbar {
+  transform: translateY(0%);
+}
+
+/* Oculta hacia arriba */
+.hide-navbar {
+  transform: translateY(-100%);
 }
 
 /* Eliminar padding lateral del container-fluid */

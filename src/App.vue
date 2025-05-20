@@ -6,21 +6,16 @@ import Navbar from './components/Navbar.vue';
 </script>
 
 <template>
-<div >
-    <Navbar  class="nv" />
-    <router-view />
-    <Footer />
-</div>
+      <div>
+        <Navbar  class="nv" />
+        <router-view />
+        <Footer />
+      </div>
 </template>
 
 <style scoped>
 /* Scoped solo afecta este componente */
-.nv {
-    min-width: 100%;
-    flex-wrap: nowrap;
-  /* margin: 0;
-  padding: 0; */
-}
+
 </style>
 <style >
   @import 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css';
