@@ -4,12 +4,14 @@ import SplashScreen from '../components/SplashScreen.vue'
 import InitialHome from '../components/InitialHome.vue'
 import CabanaDetail from '../components/CabanaDetail.vue'
 import Faq from '../components/Faq.vue'
+import Login from '../components/Login.vue'
 
 const routes = [
   { path: '/', component: SplashScreen },
   { path: '/home', component: InitialHome },
   { path: '/detail', component: CabanaDetail },
-  { path: '/faq', component: Faq }
+  { path: '/faq', component: Faq },
+  { path: '/login', component: Login }
 ] 
 
 const router = createRouter({
