@@ -1,6 +1,6 @@
 <template>
   <nav :class="['navbar-wrapper', 'border-bottom', isVisible ? 'show-navbar' : 'hide-navbar']">
-    <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap py-2">
+    <div class="container-fluid d-flex justify-content-between align-items-center flex-nowrap py-2 w-100">
       
       <!-- Marca / Logo -->
       <div class="d-flex align-items-center gap-2">
@@ -18,8 +18,8 @@
 
       <!-- Menú de navegación -->
       <div :class="['menu', isOpen ? 'd-flex flex-column' : 'd-none d-md-flex']">
-        <a href="#">Inicio</a>
-        <a href="#">Sobre Nosotros</a>
+        <a href="/home">Inicio</a>
+        <a href="/faq">Sobre Nosotros</a>
         <a href="#">¿Cómo llegar?</a>
         <a href="#">Temas</a>
       </div>

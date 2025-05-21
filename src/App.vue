@@ -7,9 +7,9 @@ import Navbar from './components/Navbar.vue';
 
 <template>
       <div>
-        <Navbar  class="nv" />
-        <router-view />
-        <Footer />
+        <Navbar   />
+          <router-view  class="d-flex"/>
+        <Footer class="d-flex" />
       </div>
 </template>
 
