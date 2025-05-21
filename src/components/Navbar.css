@@ -1,63 +1,64 @@
 /* CasitasFront\src\components\Navbar.css */
-  @import 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css';
-/* Estilos generales de la barra de navegación */
+@import 'https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css';
 
 .navStyle {
   background-color: #ffffff;
-  /* border-bottom: 1px solid #ccc; */
-  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-
+/* Brand (logo + texto) */
 .brand {
   display: flex;
   align-items: center;
-  flex: 1 0 auto;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .logo {
   width: 60px;
   height: auto;
-  margin-right: 10px;
 }
 
 .logo-text {
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
   color: #333;
-  line-height: 1.2;
 }
 
+/* Botón hamburguesa (solo en mobile) */
 .menu-button {
   display: none;
-  font-size: 24px;
+  font-size: 28px;
   background: none;
   border: none;
   cursor: pointer;
+  margin-left: auto;
 }
 
+/* Menú de enlaces */
 .menu {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
   align-items: center;
+  gap: 20px;
+  flex-grow: 1;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  min-width: 200px;
 }
 
 .menu a {
   text-decoration: none;
   color: #444;
   font-weight: 500;
+  padding: 5px 10px;
 }
 
-.menu.open {
-  display: flex;
-}
-
+/* Botón Agendar */
 .btn-agendar {
   background-color: #f4a261;
   color: white;
@@ -66,27 +67,33 @@ img {
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-  .menu {
-    display: none;
+  .navStyle {
     flex-direction: column;
-    width: 100%;
-    background-color: #fff;
-    margin-top: 10px;
-  }
-
-  .menu.open {
-    display: flex;
+    align-items: flex-start;
   }
 
   .menu-button {
     display: block;
   }
 
-  .btn-agendar {
+  .menu {
+    display: none;
+    flex-direction: column;
     width: 100%;
     margin-top: 10px;
+    gap: 10px;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .btn-agendar {
+    width: 100%;
   }
 }

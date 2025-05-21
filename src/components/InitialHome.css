@@ -3,7 +3,10 @@
 .spacer {
   /* Placeholder si se usa para espacio vertical */
 }
-
+.card {
+  border-radius: 15px;
+  width: max-content;
+}
 .actual-page {
   display: block;
   text-align: center;

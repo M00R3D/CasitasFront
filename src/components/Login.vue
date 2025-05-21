@@ -1,5 +1,10 @@
 <template>
-  <div class="container mt-5">
+  <div class="container mt-5 position-relative">
+    <!-- Botón de cerrar -->
+    <button class="btn btn-danger btn-close-modal" @click="emit('cerrar')">
+      &times;
+    </button>
+
     <div class="row justify-content-center">
       <div class="col-md-6">
         <div class="card shadow p-4">
@@ -49,7 +54,7 @@
 
 <script setup>
 import { ref } from 'vue'
-const emit = defineEmits(['cerrar']) // ✅
+const emit = defineEmits(['cerrar'])
 
 const email = ref('')
 const password = ref('')
@@ -65,16 +70,36 @@ function handleLogin() {
 
   if (email.value === 'admin@example.com' && password.value === '1234') {
     alert('Inicio de sesión exitoso')
-    emit('cerrar') // ✅ Ocultar login
+    emit('cerrar')
   } else {
     error.value = 'Correo o contraseña incorrectos.'
   }
 }
 </script>
 
-
 <style scoped>
 .card {
   border-radius: 15px;
+  width: max-content;
+}
+
+/* Estilo del botón de cerrar */
+.btn-close-modal {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #dc3545;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0 12px;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.btn-close-modal:hover {
+  background-color: #c82333;
 }
 </style>

@@ -30,7 +30,7 @@ function cerrarLogin() {
 </style>
 <template>
   <!-- Modal de login -->
-  <div v-if="showLogin" class="login-overlay">
+  <div v-if="showLogin" class="login-overlay row g-3">
     <Login @cerrar="cerrarLogin" />
   </div>
 
