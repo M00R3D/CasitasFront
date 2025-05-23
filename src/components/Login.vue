@@ -1,53 +1,49 @@
 <template>
-  <div class="container mt-5 position-relative">
+  <div class="login-container position-relative">
     <!-- Botón de cerrar -->
     <button class="btn btn-danger btn-close-modal" @click="emit('cerrar')">
       &times;
     </button>
 
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card shadow p-4">
-          <h2 class="text-center mb-4">Iniciar Sesión</h2>
-          <form @submit.prevent="handleLogin">
-            <!-- Correo -->
-            <div class="mb-3">
-              <label for="email" class="form-label">Correo electrónico</label>
-              <input
-                type="email"
-                id="email"
-                class="form-control"
-                v-model="email"
-                required
-              />
-            </div>
-
-            <!-- Contraseña -->
-            <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input
-                type="password"
-                id="password"
-                class="form-control"
-                v-model="password"
-                required
-              />
-            </div>
-
-            <!-- Error -->
-            <div v-if="error" class="alert alert-danger">
-              {{ error }}
-            </div>
-
-            <!-- Botón -->
-            <div class="d-grid">
-              <button type="submit" class="btn btn-primary">
-                Iniciar sesión
-              </button>
-            </div>
-          </form>
+    <div class="card shadow p-4">
+      <h2 class="text-center mb-4">Iniciar Sesión</h2>
+      <form @submit.prevent="handleLogin">
+        <!-- Correo -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            v-model="email"
+            required
+          />
         </div>
-      </div>
+
+        <!-- Contraseña -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            v-model="password"
+            required
+          />
+        </div>
+
+        <!-- Error -->
+        <div v-if="error" class="alert alert-danger">
+          {{ error }}
+        </div>
+
+        <!-- Botón -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">
+            Iniciar sesión
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -78,16 +74,29 @@ function handleLogin() {
 </script>
 
 <style scoped>
-.card {
-  border-radius: 15px;
-  width: max-content;
+/* Contenedor que centra el formulario */
+.login-container {
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f8f9fa;
 }
 
-/* Estilo del botón de cerrar */
+/* Tarjeta del login */
+.card {
+  border-radius: 15px;
+  max-width: 80vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Botón rojo para cerrar el modal */
 .btn-close-modal {
   position: absolute;
-  top: -10px;
-  right: -10px;
+  top: 15px;
+  right: 15px;
   background-color: #dc3545;
   color: white;
   font-size: 1.5rem;

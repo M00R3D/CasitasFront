@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+    width: 100vh;
   flex-wrap: wrap;
   border-bottom: 1px solid #ddd;
 }
@@ -75,21 +76,25 @@
   .navStyle {
     flex-direction: column;
     align-items: flex-start;
+    width: 100vh;
   }
 
   .menu-button {
     display: block;
+    width: 100vh;
   }
 
   .menu {
     display: none;
     flex-direction: column;
     width: 100%;
+    width: 100vh;
     margin-top: 10px;
     gap: 10px;
   }
 
   .menu.open {
+    width: 100vh;
     display: flex;
   }
 
